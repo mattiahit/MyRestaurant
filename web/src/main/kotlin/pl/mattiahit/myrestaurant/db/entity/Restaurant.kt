@@ -22,5 +22,8 @@ class Restaurant (
     @JoinColumn(name = "coordinate_id", referencedColumnName = "id")
     val coordinates: Coordinate,
     @OneToMany(mappedBy = "restaurant", cascade = [CascadeType.ALL], orphanRemoval = true)
-    val rates: MutableList<Rate>
+    val rates: MutableList<Rate>,
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "foodmenu_id", referencedColumnName = "id")
+    val foodMenu: FoodMenu
 )
