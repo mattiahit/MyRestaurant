@@ -1,5 +1,6 @@
 package pl.mattiahit.myrestaurant.restaurant
 
+import org.modelmapper.ModelMapper
 import pl.mattiahit.myrestaurant.db.entity.Coordinate
 import pl.mattiahit.myrestaurant.db.entity.FoodMenu
 import pl.mattiahit.myrestaurant.db.entity.Rate
@@ -28,3 +29,8 @@ fun Restaurant.toDTO() = RestaurantDto(
     rates = rates,
     foodMenu = foodMenu
 )
+
+fun RestaurantDto.toEntity(): Restaurant {
+    val modelMapper = ModelMapper()
+    return modelMapper.map(this, Restaurant::class.java)
+}
