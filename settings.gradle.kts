@@ -1,4 +1,5 @@
 rootProject.name = "MyRestaurant"
 
-include("web")
-include("mobile")
+//include("web")
+//include("persistance")
+include("domain")
