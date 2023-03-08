@@ -1,11 +1,12 @@
 package pl.mattiahit.myrestaurant.restaurant
 
-import pl.mattiahit.myrestaurant.db.entity.Restaurant
+import pl.mattiahit.domain.restaurant.RestaurantDto
+
 
 interface RestaurantService {
-    fun getAllRestaurants(): MutableIterable<Restaurant>
-    fun createRestaurant(restaurant: Restaurant)
-    fun updateRestaurant(id: Int, restaurant: Restaurant)
+    fun getAllRestaurants(): MutableIterable<RestaurantDto>
+    fun createRestaurant(restaurant: RestaurantDto)
+    fun updateRestaurant(id: Int, restaurant: RestaurantDto)
     fun deleteRestaurant(id: Int)
-    fun getRestaurantById(id: Int): Restaurant?
+    fun getRestaurantById(id: Int): RestaurantDto?
 }

@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+        google()
     }
 }
 
@@ -27,23 +28,6 @@ allprojects {
         useJUnitPlatform()
     }
 
-//    apply(plugin = "io.spring.dependency-management")
-//    apply(plugin = "plugin.jpa")
-//    apply(plugin = "kotlin")
-//
-//    repositories {
-//        mavenCentral()
-//    }
-//
-//    tasks.withType<Test> {
-//        useJUnitPlatform()
-//    }
-//
-//    dependencies {
-//        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-//    }
-
-
 }
 
 subprojects {
@@ -52,7 +36,5 @@ subprojects {
     }
 
     apply(plugin = "io.spring.dependency-management")
-//    apply(plugin = "plugin.jpa")
-//    apply(plugin = "kotlin")
 
 }

@@ -1,5 +1,5 @@
 rootProject.name = "MyRestaurant"
 
-//include("web")
-//include("persistance")
+include("web")
+include("persistance")
 include("domain")

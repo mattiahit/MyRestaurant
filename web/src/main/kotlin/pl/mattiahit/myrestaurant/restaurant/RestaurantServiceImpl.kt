@@ -2,20 +2,20 @@ package pl.mattiahit.myrestaurant.restaurant
 
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
-import pl.mattiahit.myrestaurant.db.entity.Restaurant
-import pl.mattiahit.myrestaurant.db.repository.RestaurantRepository
+import pl.mattiahit.domain.restaurant.RestaurantDto
+import pl.mattiahit.persistance.RestaurantRepository
 
 @Service
 class RestaurantServiceImpl(private val restaurantRepository: RestaurantRepository): RestaurantService {
-    override fun getAllRestaurants(): MutableIterable<Restaurant> {
+    override fun getAllRestaurants(): MutableIterable<RestaurantDto> {
         return restaurantRepository.findAll()
     }
 
-    override fun createRestaurant(restaurant: Restaurant) {
+    override fun createRestaurant(restaurant: RestaurantDto) {
         restaurantRepository.save(restaurant)
     }
 
-    override fun updateRestaurant(id: Int, restaurant: Restaurant) {
+    override fun updateRestaurant(id: Int, restaurant: RestaurantDto) {
         val restaurant = restaurantRepository.findByIdOrNull(id)
         restaurant?.let {
             it.name = restaurant.name
@@ -37,7 +37,7 @@ class RestaurantServiceImpl(private val restaurantRepository: RestaurantReposito
         }
     }
 
-    override fun getRestaurantById(id: Int): Restaurant? {
+    override fun getRestaurantById(id: Int): RestaurantDto? {
         return restaurantRepository.findByIdOrNull(id)
     }
 }

@@ -2,6 +2,7 @@ package pl.mattiahit.myrestaurant.restaurant
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
+import pl.mattiahit.domain.restaurant.RestaurantDto
 
 @RestController
 @RequestMapping("restaurant")
